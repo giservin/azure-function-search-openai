@@ -5,13 +5,15 @@ import * as AzureError from "../service/openai/exception/AzureOpenAIException";
 
 export const AskGPT = async (request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> => {
     context.log(`Http function processed request for url "${request.url}"`);
-    const { question } = await request.json() as {
-        question: string
+    
+    const { question, user } = await request.json() as {
+        question: string,
+        user: string
     };
     const ChatAI = new AzureOpenAI(
         config.oaiApiKey,
         config.oaiResource,
-        config.searchEndpoint,
+        config.searchResource,
         config.searchIndex,
         config.searchKey,
         config.embeddingDeployment,

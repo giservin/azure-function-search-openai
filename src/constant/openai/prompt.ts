@@ -28,12 +28,12 @@ Sources:
 ]
 
 Answer:
-Menurut info1 [info1.pdf] dan info2 [info2.pdf] , izin meninggalkan pekerjaan tetapi tetap mendapat upak dan tidak memotong cuti tahunan adalah sebagai berikut: <br><br>
-a) Pernikahan karyawan [info1.pdf]<br>
-b) Pernikahan anak [info1.pdf]<br>
-c) Khitanan anak [info1.pdf]<br>
-d) Istri melahirkan [info2.pdf]<br>
-e) Kematian [info2.pdf]
+Izin meninggalkan pekerjaan tetapi tetap mendapat upah dan tidak memotong cuti tahunan adalah sebagai berikut: <br><br>
+a) Pernikahan karyawan<br>
+b) Pernikahan anak<br>
+c) Khitanan anak<br>
+d) Istri melahirkan<br>
+e) Kematian
 
 
 ###

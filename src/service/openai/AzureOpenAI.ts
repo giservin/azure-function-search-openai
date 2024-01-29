@@ -3,7 +3,7 @@ import * as AzureError from "./exception/AzureOpenAIException";
 
 export class AzureOpenAI {
     private readonly _apiKey: string;
-    private readonly _searchEndpoint: string;
+    private readonly _searchResource: string;
     private readonly _searchIndex: string;
     private readonly _searchKey: string;
     private readonly _openAiResource: string;
@@ -13,7 +13,7 @@ export class AzureOpenAI {
     constructor(
         apiKey: string,
         openAiResource: string,
-        searchEndpoint: string,
+        searchResource: string,
         searchIndex: string,
         searchKey: string,
         embeddingDeployment: string,
@@ -21,7 +21,7 @@ export class AzureOpenAI {
     ) {
         this._apiKey = apiKey;
         this._openAiResource = openAiResource;
-        this._searchEndpoint = searchEndpoint;
+        this._searchResource = searchResource;
         this._searchIndex = searchIndex;
         this._searchKey = searchKey;
         this._embeddingDeployment = embeddingDeployment;
@@ -98,7 +98,7 @@ export class AzureOpenAI {
     private async _searchVectorData(summary: string): Promise<string> {
         const queryVector: number[] = await this._runEmbedding(summary);
         const response: Response = await fetch(
-            `${this._searchEndpoint}/indexes('${this._searchIndex}')/docs/search.post.search?api-version=2023-11-01`,
+            `https://${this._searchResource}.search.windows.net/indexes('${this._searchIndex}')/docs/search.post.search?api-version=2023-11-01`,
             {
                 method: "POST",
                 headers: {
@@ -109,7 +109,7 @@ export class AzureOpenAI {
                     vectorQueries: [
                         {
                             kind: "vector",
-                            k: 5,
+                            k: 3,
                             fields: "vector",
                             vector: queryVector
                         }
