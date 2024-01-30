@@ -60,7 +60,7 @@ export class AzureOpenAI {
                         },
                         {
                             role: "user",
-                            content: `Ringkas kalimat ini menjadi 1 atau 2 kata "${question}"`
+                            content: `Ringkas kalimat ini menjadi 2 sampai 3 kata "${question}"`
                         }
                     ],
                     temperature: 0.7,
